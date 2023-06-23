@@ -31,6 +31,10 @@ parts:
     meson-parameters:
       - --prefix=/snap/podcasts/current/usr
       - -Dprofile=default
+    build-environment:
+      - RUSTUP_HOME: $CRAFT_STAGE/usr/share/rust
+      - CARGO_HOME: $CRAFT_STAGE/usr/share/rust
+      - CARGO_BUILD_JOBS: $CRAFT_PARALLEL_BUILD_COUNT
     build-packages:
       - libssl-dev
     override-pull: |
