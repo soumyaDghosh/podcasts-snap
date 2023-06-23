@@ -56,6 +56,7 @@ apps:
     command: usr/bin/gnome-podcasts
     desktop: usr/share/applications/org.gnome.Podcasts.desktop
     common-id: org.gnome.Podcasts
+    extensions: [ gnome ]
     plugs:
       - network
       - network-bind
