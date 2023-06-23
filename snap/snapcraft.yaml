@@ -31,6 +31,8 @@ parts:
     meson-parameters:
       - --prefix=/snap/podcasts/current/usr
       - -Dprofile=default
+    build-packages:
+      - libssl-dev
     override-pull: |
       craftctl default
       patch -p1 < $CRAFT_PROJECT_DIR/podcasts.patch
@@ -58,4 +60,4 @@ apps:
       - network
       - network-bind
       - network-status
-      - audio-playback 
+      - audio-playback
