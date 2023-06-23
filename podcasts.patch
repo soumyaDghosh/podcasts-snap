@@ -1,0 +1,23 @@
+diff -Naur a/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in b/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in
+--- a/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in	2023-06-23 11:44:14.624536642 +0530
++++ b/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in	2023-06-23 11:44:01.868554182 +0530
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <component type="desktop-application">
+   <id>@appid@</id>
++  <icon type="stock">snap.podcasts.@appid@</icon>
+   <name>Podcasts</name>
+   <project_license>GPL-3.0</project_license>
+   <metadata_license>CC0-1.0</metadata_license>
+diff -Naur a/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in b/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in
+--- a/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in	2023-06-23 11:44:25.536521940 +0530
++++ b/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in	2023-06-23 11:44:51.288488298 +0530
+@@ -2,7 +2,7 @@
+ Name=Podcasts
+ Comment=Listen to your favorite podcasts, right from your desktop.
+ # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+-Icon=@icon@
++Icon=snap.podcasts.@icon@
+ Exec=gnome-podcasts
+ Terminal=false
+ Type=Application
