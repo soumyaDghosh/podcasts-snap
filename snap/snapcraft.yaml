@@ -37,6 +37,7 @@ parts:
       - CARGO_BUILD_JOBS: $CRAFT_PARALLEL_BUILD_COUNT
     build-packages:
       - libssl-dev
+      - libgstreamer1.0-dev
     override-pull: |
       craftctl default
       patch -p1 < $CRAFT_PROJECT_DIR/podcasts.patch
