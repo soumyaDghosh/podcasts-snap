@@ -47,6 +47,7 @@ parts:
     override-pull: |
       craftctl default
       patch -p1 < $CRAFT_PROJECT_DIR/podcasts.patch
+      craftctl set version=$(git describe --tags --abbrev=0)
     override-build: |
       craftctl default
       mkdir -p $CRAFT_PART_INSTALL/meta/gui
