@@ -1,14 +1,67 @@
 diff -Naur a/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in b/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in
 --- a/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in	2023-06-23 11:44:14.624536642 +0530
-+++ b/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in	2023-06-23 11:44:01.868554182 +0530
++++ b/podcasts-gtk/resources/org.gnome.Podcasts.appdata.xml.in.in	2023-08-26 21:16:28.334425859 +0530
 @@ -1,6 +1,7 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <component type="desktop-application">
    <id>@appid@</id>
-+  <icon type="stock">snap.podcasts.@appid@</icon>
++  <icon type="stock">snap.podcasts.@app-id@</icon>
    <name>Podcasts</name>
    <project_license>GPL-3.0</project_license>
    <metadata_license>CC0-1.0</metadata_license>
+@@ -13,19 +14,35 @@
+       You can subscribe to shows via RSS/Atom, iTunes, and Soundcloud links. Subscriptions from other apps can be imported via OPML files.
+     </p>
+   </description>
+-  <url type="homepage">https://gitlab.gnome.org/World/podcasts</url>
+   <screenshots>
+-    <screenshot>
++    <screenshot type="default">
+       <image>https://gitlab.gnome.org/World/podcasts/raw/master/screenshots/home_view.png</image>
++      <caption>
++        Home View showing list of episodes, split in sections "Today" and "This Week".
++      </caption>
+     </screenshot>
+     <screenshot>
+       <image>https://gitlab.gnome.org/World/podcasts/raw/master/screenshots/shows_view.png</image>
++      <caption>
++        Shows View showing list of subscribed podcasts by their Cover images.
++      </caption>
+     </screenshot>
+     <screenshot>
+       <image>https://gitlab.gnome.org/World/podcasts/raw/master/screenshots/show_widget.png</image>
++      <caption>
++        Signle Show View that lists all episodes for a subscribed podcast.
++      </caption>
+     </screenshot>
+   </screenshots>
+   <releases>
++    <release version="0.6.0" date="2023-07-04">
++     <description>
++        <p>
++          This version brings the long awaited GTK 4 port, dark mode support, a new Show decription widget
++          and a handful of fixes all around.
++        </p>
++      </description>
++    </release>
+     <release version="0.5.1" date="2022-01-03">
+      <description>
+         <p>
+@@ -128,11 +145,12 @@
+   <url type="homepage">https://wiki.gnome.org/Apps/Podcasts</url>
+   <url type="bugtracker">https://gitlab.gnome.org/World/podcasts/issues/</url>
+   <url type="donation">https://www.gnome.org/donate/</url>
++  <url type="translate">https://gitlab.gnome.org/World/podcasts#translations</url>
++  <url type="vcs-browser">https://gitlab.gnome.org/World/podcasts</url>
+   <translation type="gettext">gnome-podcasts</translation>
+   <project_group>GNOME</project_group>
+   <update_contact>jpetridis@gnome.org</update_contact>
+-  <developer_name>Jordan Petridis</developer_name>
+-  <developer_name>Julian Hofer</developer_name>
++  <developer_name translatable="false">Jordan Petridis / Julian Hofer</developer_name>
+   <custom>
+     <value key="Purism::form_factor">workstation</value>
+     <value key="Purism::form_factor">mobile</value>
 diff -Naur a/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in b/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in
 --- a/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in	2023-06-23 11:44:25.536521940 +0530
 +++ b/podcasts-gtk/resources/org.gnome.Podcasts.desktop.in.in	2023-06-23 11:44:51.288488298 +0530
