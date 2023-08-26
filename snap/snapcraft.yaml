@@ -39,6 +39,7 @@ parts:
       - libssl-dev
       - libgstreamer1.0-dev
       - libgstreamer-plugins-base1.0-dev
+      - libgstreamer-plugins-bad1.0-dev
     override-pull: |
       craftctl default
       patch -p1 < $CRAFT_PROJECT_DIR/podcasts.patch
