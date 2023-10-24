@@ -1,8 +1,8 @@
-name: podcasts # you probably want to 'snapcraft register <name>'
-base: core22 # the base snap is the execution environment for this snap
+name: podcasts
+base: core22 
 adopt-info: podcasts
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs and slots
+grade: stable
+confinement: strict 
 
 architectures:
   - build-on: amd64
@@ -28,10 +28,9 @@ parts:
     override-prime: ''
   podcasts:
     after: [ rustup ]
-    # See 'snapcraft plugins'
     plugin: meson
     source: https://gitlab.gnome.org/World/podcasts.git
-    source-tag: '0.6.0'
+    source-tag: '0.6.1'
     meson-parameters:
       - --prefix=/snap/podcasts/current/usr
       - -Dprofile=default
@@ -43,18 +42,7 @@ parts:
       - libssl-dev
       - libgstreamer1.0-dev
       - libgstreamer-plugins-base1.0-dev
-      - libgstreamer-plugins-bad1.0-dev
-    override-pull: |
-      craftctl default
-      patch -p1 < $CRAFT_PROJECT_DIR/podcasts.patch
-      craftctl set version=$(git describe --tags --abbrev=0)
-    override-build: |
-      craftctl default
-      mkdir -p $CRAFT_PART_INSTALL/meta/gui
-      cp -r $CRAFT_PART_INSTALL/snap/podcasts/current/usr/share/icons $CRAFT_PART_INSTALL/meta/gui/
-      for i in `find $CRAFT_PART_INSTALL/meta/gui/icons -name "*.svg" -o -name "*.png"`; do
-        mv $i "`dirname $i`/snap.$CRAFT_PROJECT_NAME.`basename $i`"
-      done
+      - libgstreamer-plugins-bad1.0-dev 
     parse-info: [ usr/share/metainfo/org.gnome.Podcasts.appdata.xml ]
 
 
