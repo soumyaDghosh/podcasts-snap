@@ -44,6 +44,8 @@ parts:
       - libgstreamer-plugins-base1.0-dev
       - libgstreamer-plugins-bad1.0-dev 
     parse-info: [ usr/share/metainfo/org.gnome.Podcasts.appdata.xml ]
+    organize: 
+      snap/podcasts/current: .
 
 
 slots:
