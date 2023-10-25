@@ -38,6 +38,9 @@ parts:
       - RUSTUP_HOME: $CRAFT_STAGE/usr/share/rust
       - CARGO_HOME: $CRAFT_STAGE/usr/share/rust
       - CARGO_BUILD_JOBS: $CRAFT_PARALLEL_BUILD_COUNT
+    override-pull: |
+      craftctl default
+      sed -i '0,/APP_ID.to_string()/{s/APP_ID.to_string()/"Podcasts".to_string()/}' $CRAFT_PART_SRC/podcasts-gtk/src/widgets/player.rs
     build-packages:
       - libssl-dev
       - libgstreamer1.0-dev
@@ -53,6 +56,9 @@ slots:
     interface: dbus
     bus: session
     name: org.gnome.Podcasts
+  mpris:
+    interface: mpris
+    name: Podcasts
 apps:
   podcasts:
     command: usr/bin/gnome-podcasts
