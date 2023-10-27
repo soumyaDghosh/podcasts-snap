@@ -3,6 +3,10 @@ base: core22
 adopt-info: podcasts
 grade: stable
 confinement: strict 
+license: GPL-3.0-only
+website: https://github.com/soumyaDghosh/podcasts-snap
+source-code: https://gitlab.gnome.org/World/podcasts
+issues: https://github.com/soumyaDghosh/podcasts-snap/issues
 
 architectures:
   - build-on: amd64
