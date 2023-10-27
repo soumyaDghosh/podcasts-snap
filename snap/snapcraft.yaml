@@ -70,3 +70,4 @@ apps:
       - network-bind
       - network-status
       - audio-playback
+      - screen-inhibit-control
