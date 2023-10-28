@@ -35,6 +35,7 @@ parts:
     plugin: meson
     source: https://gitlab.gnome.org/World/podcasts.git
     source-tag: '0.6.1'
+    source-depth: 1
     meson-parameters:
       - --prefix=/snap/podcasts/current/usr
       - -Dprofile=default
