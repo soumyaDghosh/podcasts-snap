@@ -24,7 +24,7 @@ parts:
     after: [ rustup ]
     plugin: meson
     source: https://gitlab.gnome.org/World/podcasts.git
-    source-tag: '25.3'
+    source-tag: '25.2'
     source-depth: 1
     meson-parameters:
       - --prefix=/snap/podcasts/current/usr
