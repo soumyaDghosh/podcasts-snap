@@ -33,7 +33,7 @@ parts:
       - PATH: ${HOME}/.cargo/bin:${PATH}
     override-pull: |
       craftctl default
-      sed -i '0,/APP_ID.to_string()/{s/APP_ID.to_string()/"Podcasts".to_string()/}' $CRAFT_PART_SRC/podcasts-gtk/src/widgets/player.rs
+      patch -p1 < $CRAFT_PROJECT_DIR/patches/mpris.diff
     build-packages:
       - libssl-dev
       - libgstreamer1.0-dev

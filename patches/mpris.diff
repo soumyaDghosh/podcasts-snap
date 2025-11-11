@@ -1,0 +1,16 @@
+diff --git a/podcasts-gtk/src/widgets/player.rs b/podcasts-gtk/src/widgets/player.rs
+index 93dd7aa1..794ded79 100644
+--- a/podcasts-gtk/src/widgets/player.rs
++++ b/podcasts-gtk/src/widgets/player.rs
+@@ -404,9 +404,9 @@ impl Default for PlayerWidget {
+         // window. Make sure it doesn't do that.
+         player.set_video_track_enabled(false);
+         let mpris = crate::RUNTIME.block_on(async move {
+-            let mpris_result = Player::builder(APP_ID)
++            let mpris_result = Player::builder("Podcasts")
+                 .identity(i18n("Podcasts"))
+-                .desktop_entry(APP_ID)
++                .desktop_entry("podcasts_podcasts")
+                 .can_raise(true)
+                 .can_pause(false)
+                 .can_play(false)
